@@ -1,21 +1,23 @@
 <template>
   <div class="main-conet">
-    <div class="main-nav">
-      <span v-for="(item,index) in arr" :key="index"
-        :class="{active :index===ind}"
-        @click="handletab(index)"
-      >
-        {{item}}
-      </span>
-    </div>
+    <Tabqiehuan />
+    <ListBar />   
   </div>
 </template>
 <script>
+import Tabqiehuan from '@/components/Tabqiehuan'
+import ListBar from '@/components/ListBar'
 export default {
+  computed: {
+   
+  },
+  components: {
+      Tabqiehuan,
+      ListBar
+  },
   data() {
     return {
-      arr: ['加班','休假'],
-      ind: 0
+  
     }
   },
 
@@ -24,15 +26,14 @@ export default {
   },
 
   methods: {
-    handletab(index) {
-      console.log(index)
-      this.ind = index
-    },
+    //获取数据
     getmock() {
       this.$http.get('/api/list').then(res=>{
         console.log(res.data.tday)
+        this.$store.commit('addaxios',res.data.tday)
       })
     }
+   
   },
 
 }
