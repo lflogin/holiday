@@ -25,7 +25,12 @@ const routes = [
         path: 'processed',
         name: 'processed',
         component: () => import(/* webpackChunkName: "about" */ '../views/Processed.vue'),
-      }
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Detail.vue'),
+      },
     ]
   },
   // {

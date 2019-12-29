@@ -8,6 +8,11 @@
 import Tabqiehuan from '@/components/Tabqiehuan'
 import ListBar from '@/components/ListBar'
 export default {
+  data() {
+    return {
+     
+    }
+  },
   computed: {
    
   },
@@ -23,16 +28,18 @@ export default {
 
   created() {
     this.getmock()
+    this.$store.commit('tabadd',0)
   },
 
   methods: {
     //获取数据
     getmock() {
       this.$http.get('/api/list').then(res=>{
-        console.log(res.data.tday)
+        // console.log(res.data.tday)
         this.$store.commit('addaxios',res.data.tday)
       })
-    }
+    },
+    
    
   },
 

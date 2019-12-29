@@ -1,7 +1,8 @@
 <template>
     <div class="main-nav">
       <span v-for="(item,index) in arr" :key="index"
-        :class="{active :index===ind}"
+        :class="{active :index===ind}"                      
+        
         @click="handletab(index)"
       >
         {{item}}
@@ -9,15 +10,12 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-  computed: {
-    arr() {
-      return this.$store.state.arr
-    },
-    ind() {
-      return this.$store.state.ind
-    }
-  },
+  computed: mapState({
+    arr: state => state.arr,
+    ind: state => state.ind
+  }),
 
   methods: {
     handletab(index) {
