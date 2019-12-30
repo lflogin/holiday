@@ -45,4 +45,7 @@ export default {
     }
   }
   }
+  .van-tabbar {
+    height: 100%;
+  }
 </style>

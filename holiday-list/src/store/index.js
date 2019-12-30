@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
@@ -21,12 +22,18 @@ export default new Vuex.Store({
       state.ind = index
       if (state.ind === 0) {
         state.newArr = state.list.filter(item => item.isCheck)
-        } else {
+      } else {
         state.newArr = state.list.filter(item => !item.isCheck)
-        }
+      }
     }
   },
   actions: {
+    addaxios ({ commit }) {
+      axios.get('/api/list').then(res => {
+        console.log(res.data.tday)
+        commit('addaxios', res.data.tday)
+      })
+    }
   },
   modules: {
   }

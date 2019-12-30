@@ -1,7 +1,7 @@
 <template>
     <div class="main-nav">
       <span v-for="(item,index) in arr" :key="index"
-        :class="{active :index===ind}"        
+        :class="{active :index===ind}"      
         @click="handletab(index)">
         {{item}}
       </span>

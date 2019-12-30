@@ -10,6 +10,7 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
+  box-sizing: border-box;
 }
 html,body {
   width: 100%;

@@ -5,6 +5,7 @@
   </div>
 </template>
 <script>
+import { mapActions } from 'vuex'
 import Tabqiehuan from '@/components/Tabqiehuan'
 import ListBar from '@/components/ListBar'
 export default {
@@ -17,12 +18,12 @@ export default {
     this.$store.commit('tabadd', 0)
   },
   methods: {
+    ...mapActions([
+      'addaxios'
+    ]),
     // 获取数据
     getmock () {
-      this.$http.get('/api/list').then(res => {
-        // console.log(res.data.tday)
-        this.$store.commit('addaxios', res.data.tday)
-      })
+      this.addaxios()
     }
   }
 }

@@ -5,12 +5,14 @@
     <p>直接主管： <input type="text" v-model="userbox"></p>
     <div>
       <h3>申请信息</h3>
-      <van-datetime-picker
-        v-model="currentDate"
-        type="datetime"
-        :min-date="minDate"
-        :max-date="maxDate"
-      />
+       <div class="block">
+       <span class="demonstration">默认</span>
+       <el-date-picker
+      v-model="value1"
+      type="date"
+      placeholder="选择日期">
+    </el-date-picker>
+  </div>
     </div>
   </div>
 </template>
@@ -20,12 +22,15 @@ export default {
     return {
       user: '',
       userbox: '',
-      minHour: 10,
-      maxHour: 20,
-      minDate: new Date(),
-      maxDate: new Date(2019, 10, 1),
-      currentDate: new Date()
+      value1: ''
     }
+  },
+  watch: {
+    value1 (v) {
+      console.log(v)
+    }
+  },
+  methods: {
   }
 }
 </script>
