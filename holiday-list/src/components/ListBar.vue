@@ -8,12 +8,11 @@
 <script>
 export default {
   computed: {
-    newArr() {
+    newArr () {
       return this.$store.state.newArr
     }
-  },
+  }
 }
 </script>
 <style lang="scss">
-  
 </style>

@@ -1,48 +1,30 @@
 <template>
   <div class="main-conet">
     <Tabqiehuan />
-    <ListBar />   
+    <ListBar />
   </div>
 </template>
 <script>
 import Tabqiehuan from '@/components/Tabqiehuan'
 import ListBar from '@/components/ListBar'
 export default {
-  data() {
-    return {
-     
-    }
-  },
-  computed: {
-   
-  },
   components: {
-      Tabqiehuan,
-      ListBar
+    Tabqiehuan,
+    ListBar
   },
-  data() {
-    return {
-  
-    }
-  },
-
-  created() {
+  created () {
     this.getmock()
-    this.$store.commit('tabadd',0)
+    this.$store.commit('tabadd', 0)
   },
-
   methods: {
-    //获取数据
-    getmock() {
-      this.$http.get('/api/list').then(res=>{
+    // 获取数据
+    getmock () {
+      this.$http.get('/api/list').then(res => {
         // console.log(res.data.tday)
-        this.$store.commit('addaxios',res.data.tday)
+        this.$store.commit('addaxios', res.data.tday)
       })
-    },
-    
-   
-  },
-
+    }
+  }
 }
 </script>
 <style lang="scss">

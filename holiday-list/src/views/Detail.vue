@@ -15,9 +15,8 @@
   </div>
 </template>
 <script>
-import { DatetimePicker } from 'vant';
 export default {
-   data() {
+  data () {
     return {
       user: '',
       userbox: '',
