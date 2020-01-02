@@ -1,7 +1,7 @@
 <template>
    <ul class="app-ul">
       <li v-for="item in newArr" :key="item.id">
-        <p class="ul-p"><van-icon name="fire-o" />待审批</p>
+        <p class="ul-p" @click="handitem(item)"><van-icon name="fire-o" />待审批</p>
         <div class="ul-list">
           <div>
             <span>申请人</span>
@@ -28,6 +28,14 @@ export default {
   computed: {
     newArr () {
       return this.$store.state.newArr
+    }
+  },
+  methods: {
+    handitem (item) {
+      console.log(item, '-----------')
+      this.$router.push({
+        path: `/gosend/${item.id}`
+      })
     }
   }
 }

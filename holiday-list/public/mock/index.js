@@ -10,7 +10,10 @@ const list = Mock.mock({
       'isCheck|+1': isshow,
       'time': '2019/5/23',
       'isState|+1': state,
-      'num|1-9': 1
+      'num|1-9': 1,
+      'regson': '@ctitle(10)',
+      'starttime': '8:00',
+      'endtime': '15:00'
     }
   ]
 })

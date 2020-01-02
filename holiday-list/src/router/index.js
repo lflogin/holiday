@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -14,25 +13,30 @@ const routes = [
       {
         path: 'peding',
         name: 'peding',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Peding.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../views/Peding.vue')
       },
       {
         path: 'sent',
         name: 'sent',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Sent.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../views/Sent.vue')
       },
       {
         path: 'processed',
         name: 'processed',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Processed.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../views/Processed.vue')
       },
       {
         path: 'detail',
         name: 'detail',
-        component: () => import(/* webpackChunkName: "about" */ '../views/Detail.vue'),
+        component: () => import(/* webpackChunkName: "about" */ '../views/Detail.vue')
       },
+      {
+        path: 'gosend/:id',
+        name: 'gosend',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Gosend.vue')
+      }
     ]
-  },
+  }
   // {
   //   path: '/about',
   //   name: 'about',
