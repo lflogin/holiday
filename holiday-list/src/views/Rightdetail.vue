@@ -1,6 +1,6 @@
 <template>
   <div class="detail">
-    <p class="detail-p">办公室加班申请表</p>
+    <p class="detail-p">办公室调休申请表</p>
     <p>申请人姓名：<input type="text" v-model="user"></p>
     <p>直接主管： <input type="text" v-model="userbox"></p>
     <div class="detail-send">
@@ -94,7 +94,7 @@ export default {
       const arr = {
         'name': this.user,
         'id': this.list[this.list.length - 1].id + 1,
-        'isCheck': true,
+        'isCheck': false,
         'tab2': this.userbox,
         'time': this.value1,
         'isState': this.options,

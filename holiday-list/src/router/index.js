@@ -31,6 +31,11 @@ const routes = [
         component: () => import(/* webpackChunkName: "about" */ '../views/Detail.vue')
       },
       {
+        path: 'rightdetail',
+        name: 'rightdetail',
+        component: () => import(/* webpackChunkName: "about" */ '../views/Rightdetail.vue')
+      },
+      {
         path: 'gosend/:id',
         name: 'gosend',
         component: () => import(/* webpackChunkName: "about" */ '../views/Gosend.vue')

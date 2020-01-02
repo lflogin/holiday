@@ -32,7 +32,7 @@ export default {
     // 监听如果跳转到填表页面就隐藏头部tab
     '$route' (to, from) {
       // console.log(to,'-------------home')
-      if (to.name === 'detail' || to.name === 'gosend') {
+      if (to.name === 'detail' || to.name === 'gosend' || to.name === 'rightdetail') {
         this.head = false
       } else {
         this.head = true

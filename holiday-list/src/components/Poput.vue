@@ -21,6 +21,10 @@ export default {
     // 点击休班
     nowork () {
       this.$emit('nonepoput', false)
+      // 跳转页面
+      this.$router.push({
+        path: '/rightdetail'
+      })
     }
   }
 }
