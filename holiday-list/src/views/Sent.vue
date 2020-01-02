@@ -12,11 +12,10 @@ export default {
     Tabqiehuan,
     ListBar
   },
-  created() {
-    this.$store.commit('tabadd',0)
+  created () {
+    this.$store.commit('tabadd', 0)
   }
 }
 </script>
 <style lang="scss">
-  
 </style>

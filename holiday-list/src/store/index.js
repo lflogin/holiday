@@ -34,13 +34,13 @@ export default new Vuex.Store({
     // 提交新的申请表
     addvuex (state, item) {
       state.newList = [...state.list, item]
-      console.log(state.newList, 'vuex------------')
+      // console.log(state.newList, 'vuex------------')
     }
   },
   actions: {
     addaxios ({ commit }) {
       axios.get('/api/list').then(res => {
-        console.log(res.data.tday)
+        // console.log(res.data.tday)
         commit('addaxios', res.data.tday)
       })
     }

@@ -57,12 +57,13 @@
       <textarea name="" id="" cols="30" rows="10" v-model="texts"></textarea>
     </div>
     <div class="detail-btn">
-      <el-button>取消</el-button>
+      <el-button @click="nobtn">取消</el-button>
       <el-button type="primary" @click="submit">提交</el-button>
     </div>
   </div>
 </template>
 <script>
+import moment from 'moment'
 import { mapState } from 'vuex'
 export default {
   computed: {
@@ -90,13 +91,14 @@ export default {
     }
   },
   methods: {
+    // 点击提交
     submit () {
       const arr = {
         'name': this.user,
         'id': this.list[this.list.length - 1].id + 1,
         'isCheck': false,
         'tab2': this.userbox,
-        'time': this.value1,
+        'time': moment(this.value1).format('YYYY/M/D'),
         'isState': this.options,
         'starttime': this.value2,
         'endtime': this.value3,
@@ -109,6 +111,10 @@ export default {
       this.$router.push({
         path: '/peding'
       })
+    },
+    // 点击取消
+    nobtn () {
+      this.$router.back()
     }
   }
 }
